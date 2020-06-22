@@ -20,6 +20,20 @@ mix.ts("resources/ts/app.tsx", "public/js")
                     test: /\.tsx?$/,
                     loader: "ts-loader",
                     exclude: /node_modules/
+                },
+                {
+                    test: /\.scss$/,
+                    use: [
+                        "style-loader",
+                        {
+                            loader: "css-loader",
+                            options: {
+                                modules: true
+                            }
+                        },
+                        "postcss-loader",
+                        "sass-loader"
+                    ]
                 }
             ]
         },
