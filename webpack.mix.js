@@ -11,33 +11,4 @@ const mix = require("laravel-mix");
  |
  */
 
-mix.ts("resources/ts/app.tsx", "public/js")
-    .sass("resources/sass/app.scss", "public/css")
-    .webpackConfig({
-        module: {
-            rules: [
-                {
-                    test: /\.tsx?$/,
-                    loader: "ts-loader",
-                    exclude: /node_modules/
-                },
-                {
-                    test: /\.scss$/,
-                    use: [
-                        "style-loader",
-                        {
-                            loader: "css-loader",
-                            options: {
-                                modules: true
-                            }
-                        },
-                        "postcss-loader",
-                        "sass-loader"
-                    ]
-                }
-            ]
-        },
-        resolve: {
-            extensions: ["*", ".js", ".jsx", ".ts", ".tsx"]
-        }
-    });
+mix.ts("resources/ts/app.tsx", "public/js");

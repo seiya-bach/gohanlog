@@ -1,10 +1,20 @@
 const path = require("path");
-// your app's webpack.config.js
-const custom = require("../node_modules/laravel-mix/setup/webpack.config.js");
+const SRC_PATH = path.join(__dirname, "../resources/ts");
 
-module.exports = async ({ config, mode }) => {
-    return {
-        ...config,
-        module: { ...config.module, rules: custom.module.rules }
-    };
+module.exports = ({ config }) => {
+    config.module.rules.push({
+        test: /\.(ts|tsx)$/,
+        include: [SRC_PATH],
+        use: [
+            {
+                loader: require.resolve("babel-loader"),
+                options: {
+                    presets: [["react-app", { flow: false, typescript: true }]]
+                }
+            },
+            { loader: require.resolve("react-docgen-typescript-loader") }
+        ]
+    });
+    config.resolve.extensions.push(".ts", ".tsx");
+    return config;
 };
