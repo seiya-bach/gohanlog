@@ -16,9 +16,15 @@
 
 import * as React from "react";
 import { render } from "react-dom";
+import Balloon from "./components/atoms/Balloon";
 
 interface Props {}
 
-const App = (props: Props) => <div>hello react</div>;
+const App = (props: Props) => (
+    <div>
+        <Balloon />
+        hello react
+    </div>
+);
 
 render(<App />, document.getElementById("app"));
