@@ -1,11 +1,11 @@
-import { configure, addDecorator } from "@storybook/react";
-//import { withInfo } from "@storybook/addon-info";
-import { withKnobs } from "@storybook/addon-knobs";
+import { configure, addDecorator } from '@storybook/react';
+//import { withInfo } from '@storybook/addon-info';
+import { withKnobs } from '@storybook/addon-knobs';
 
 //import "../src/index.css";
 
 const req = require.context(
-    "../resources/ts/components/atoms",
+    '../resources/ts/components',
     true,
     /.(story|stories).tsx$/
 );

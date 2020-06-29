@@ -14,17 +14,25 @@
 
 //require("./components/Example");
 
-import * as React from "react";
-import { render } from "react-dom";
-import Balloon from "./components/atoms/Balloon";
+import * as React from 'react';
+import { render } from 'react-dom';
+import Balloon from './components/atoms/Balloon';
+import EditButton from './components/atoms/SaveButton/presentation';
+import FoodItem from './components/molecules/FoodItem/presentation';
 
 interface Props {}
 
-const App = (props: Props) => (
-    <div>
-        <Balloon />
-        hello react
-    </div>
-);
+const App = (props: Props) => {
+    const aaa: number = 0;
 
-render(<App />, document.getElementById("app"));
+    return (
+        <div>
+            <Balloon />
+            <EditButton />
+            <FoodItem />
+            hello react
+        </div>
+    );
+};
+
+render(<App />, document.getElementById('app'));
