@@ -29,7 +29,7 @@ const App = (props: Props) => {
         <div>
             <Balloon />
             <EditButton />
-            <FoodItem />
+            <FoodItem title="gohan" description="yakiniku" />
             hello react
         </div>
     );

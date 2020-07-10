@@ -12,7 +12,7 @@ import EditButton from '../../atoms/EditButton/presentation';
 import DeleteButton from '../../atoms/DeleteButton/presentation';
 
 export interface FoodItemProps {
-    foodTitle: string;
+    title: string;
     description: string;
 }
 
@@ -36,13 +36,13 @@ const useStyles = makeStyles({
     },
 });
 
-const FoodItem = ({ foodTitle, description }) => {
+const FoodItem = ({ title, description }) => {
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
 
     return (
         <Card className={classes.root}>
-            <CardHeader title="冷やし中華" />
+            <CardHeader title={title} />
             <CardContent>
                 <Typography
                     className={classes.title}
@@ -57,7 +57,7 @@ const FoodItem = ({ foodTitle, description }) => {
                     color="textPrimary"
                     gutterBottom
                 >
-                    今日の晩ご飯は冷やし中華
+                    {description}
                 </Typography>
             </CardContent>
             <CardActions>
