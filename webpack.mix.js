@@ -1,4 +1,4 @@
-const mix = require("laravel-mix");
+const mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,4 +11,7 @@ const mix = require("laravel-mix");
  |
  */
 
-mix.ts("resources/ts/app.tsx", "public/js");
+mix.ts('resources/ts/app.tsx', 'public/js').sourceMaps(
+    true,
+    'inline-source-map'
+);
